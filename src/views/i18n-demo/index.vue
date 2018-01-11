@@ -7,6 +7,7 @@
       </div>
       <div>
         <el-radio-group v-model="lang" size="small">
+          <!-- 切换语言的盒子 -->
           <el-radio label="zh" border>简体中文</el-radio>
           <el-radio label="en" border>English</el-radio>
         </el-radio-group>
@@ -25,6 +26,7 @@
           </el-pagination>
         </div>
         <div class="block">
+          <!-- 这边所有的名称都是通过翻译出来了 -->
           <el-button class="item-btn" size="small">{{$t('i18nView.default')}}</el-button>
           <el-button class="item-btn" size="small" type="primary">{{$t('i18nView.primary')}}</el-button>
           <el-button class="item-btn" size="small" type="success">{{$t('i18nView.success')}}</el-button>

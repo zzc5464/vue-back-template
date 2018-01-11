@@ -23,8 +23,12 @@ export default {
     ])
   },
   created() {
+    // 判断当前权限
+    
     if (!this.roles.includes('admin')) {
       this.currentRole = 'editorDashboard'
+    }else {
+      this.currentRole = 'adminDashboard'
     }
   }
 }

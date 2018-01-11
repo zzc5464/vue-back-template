@@ -1,4 +1,4 @@
-// translate router.meta.title, be used in breadcrumb sidebar tagsview
+// 翻译标题的方法
 export function generateTitle(title) {
-  return this.$t('route.' + title) // $t :this method from vue-i18n, inject in @/lang/index.js
+  return this.$t('route.' + title) // $t :是 vue-i18n自带的方法,用来注入这个路径下的 @/lang/index.js  翻译语言
 }

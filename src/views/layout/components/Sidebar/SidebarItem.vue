@@ -32,6 +32,7 @@
 </template>
 
 <script>
+// 这里是侧边栏的每一个li，导入了国际化语言包，实现切换语言的功能。
 import { generateTitle } from '@/utils/i18n'
 
 export default {

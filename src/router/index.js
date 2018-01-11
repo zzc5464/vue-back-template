@@ -30,7 +30,9 @@ import Layout from '../views/layout/Layout'
 export const constantRouterMap = [
   // 这里都是不显示在侧边栏的组件
   { path: '/login', component: _import('login/index'), hidden: true },
+  // 授权重定向
   { path: '/authredirect', component: _import('login/authredirect'), hidden: true },
+  // 报错时的页面
   { path: '/404', component: _import('errorPage/404'), hidden: true },
   { path: '/401', component: _import('errorPage/401'), hidden: true },
   {
@@ -38,11 +40,11 @@ export const constantRouterMap = [
     path: '',
     component: Layout,
     redirect: 'dashboard',
+    hidden:true,
     // 在children中写的路由页面会在app-main中显示
     children: [{
       path: 'dashboard',
       component: _import('dashboard/index'),
-      
       name: 'dashboard',
       meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
     }]
@@ -52,6 +54,7 @@ export const constantRouterMap = [
     path: '/documentation',
     component: Layout,
     redirect: '/documentation/index',
+    hidden:true,
 
     children: [{
       path: 'index',
@@ -60,8 +63,9 @@ export const constantRouterMap = [
       meta: { title: 'documentation', icon: 'documentation', noCache: true }
     }]
   },
+  //  自己新增的页面
   {
-    // 自己新增的一个页面
+    // 我的页面1
     path:'/mypage',
     component:Layout,
     redirect:'noredirect',
@@ -77,6 +81,14 @@ export const constantRouterMap = [
       meta:{
         title:'mypage',
         icon:'documentation'
+      }
+    },{
+      path:'demo',
+      component:_import('mypage/demo'),
+      name:'mydemo',
+      meta:{
+        title:'mydemo',
+        icon:'lock',
       }
     }]
   }
@@ -95,6 +107,7 @@ export const asyncRouterMap = [
     component: Layout,
     redirect: '/permission/index',
     meta: { role: ['admin'] },
+    hidden:true,
     children: [{
       path: 'index',
       component: _import('permission/index'),
@@ -111,6 +124,7 @@ export const asyncRouterMap = [
     // 图标
     path: '/icon',
     component: Layout,
+    hidden:true,
     children: [{
       path: 'index',
       component: _import('svg-icons/index'),
@@ -170,6 +184,8 @@ export const asyncRouterMap = [
     component: Layout,
     redirect: '/example/table/complex-table',
     name: 'example',
+    hidden:true,
+    
     meta: {
       title: 'example',
       icon: 'example'
@@ -201,6 +217,8 @@ export const asyncRouterMap = [
     component: Layout,
     redirect: 'noredirect',
     name: 'form',
+    hidden:true,
+    
     meta: {
       title: 'form',
       icon: 'form'
@@ -242,6 +260,8 @@ export const asyncRouterMap = [
     component: Layout,
     redirect: '/excel/export-excel',
     name: 'excel',
+    hidden:true,
+    
     meta: {
       title: 'excel',
       icon: 'excel'
@@ -286,6 +306,8 @@ export const asyncRouterMap = [
     // 国际化
     path: '/i18n',
     component: Layout,
+    hidden:true,
+    
     children: [{ path: 'index', component: _import('i18n-demo/index'), name: 'i18n', meta: { title: 'i18n', icon: 'international' }}]
   },
   // 其他的路由都会调到404去，这个一定要写在最后

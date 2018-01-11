@@ -1,5 +1,10 @@
+// 这里都是翻译的语言
 export default {
   route: {
+    // 所以每加一个页面都要在这里加名字
+    mypage:'我的组件',
+    mydemo:'我的子组件',
+    // 这个库本身自带的
     dashboard: '首页',
     introduction: '简述',
     documentation: '文档',

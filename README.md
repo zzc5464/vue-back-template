@@ -12,3 +12,11 @@
 
 ![](./READMEimgs/02.png)
 
+### 关于国际化语言
+
+![](./READMEimgs/03i18n.png)
+
+- 所有关于国际化的配置都在如上几个文件中
+- 侧边栏的所有item都是通过方法生成出来的
+
+![](./READMEimgs/04i18n.png)
