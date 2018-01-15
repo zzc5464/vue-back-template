@@ -1,6 +1,7 @@
 <template>
   <scroll-bar>
     <el-menu mode="vertical" :default-active="$route.path" :collapse="isCollapse" background-color="#304156" text-color="#fff" active-text-color="#409EFF">
+      <sidebar-img></sidebar-img>
       <sidebar-item :routes="permission_routers"></sidebar-item>
     </el-menu>
   </scroll-bar>
@@ -10,9 +11,10 @@
 import { mapGetters } from 'vuex'
 import SidebarItem from './SidebarItem'
 import ScrollBar from '@/components/ScrollBar'
+import SidebarImg from './sidebarImg'
 
 export default {
-  components: { SidebarItem, ScrollBar },
+  components: { SidebarItem, ScrollBar,SidebarImg },
   computed: {
     ...mapGetters([
       'permission_routers',
